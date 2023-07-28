@@ -1,12 +1,20 @@
 import { useState } from "react"
 import {auth, signInWithEmailAndPassword, db, ref, get, child} from '../../module/firebase.js'
 import {Link, useHistory} from 'react-router-dom'
+import Input from "./inputBox.js";
 
 const Login = (props) =>{
    
     const [email, setEmail]= useState('')
     const [password, setPassword]= useState('')
     const history = useHistory()
+    const getEmail=(email)=>{
+        setEmail( email)
+        }
+        
+    const getPassword=(password)=>{
+        setPassword (password)
+        }
 
     const loginUser=(e)=>{
         e.preventDefault()
@@ -40,14 +48,7 @@ const Login = (props) =>{
         <div >
         <form >
             <h1 className="form-label">Sign In</h1><br/>
-            <label htmlFor="userEmail" className="form-label">email:</label><br/>
-            <input type="email" className="form-control" id="userEmail" name="userEmail" onChange={(e)=>{
-        setEmail(e.target.value)
-    }}/><br/>
-            <label htmlFor="userPassword" className="form-label">password:</label><br/>
-            <input type="password" className="form-control" id="userPassword" name="userPassword" onChange={(e)=>{
-        setPassword(e.target.value)
-    }}/><br/>
+            <Input email={getEmail} password={getPassword}/>
             <button type="button" className="btn login" onClick={loginUser}>LogIn</button>
             <Link to="/signup" className="justify-content-center d-flex align-item-center">To Make An Account, Please Sign Up</Link>
         </form>

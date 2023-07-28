@@ -10,8 +10,8 @@ body{
 
 }
 form{
-    position: absolute;
-    top: 50%;
+    position: absolute; 
+    top: 50%; 
     left: 50%;
     transform: translate(-49%, -49%);
     padding: 40px;
@@ -21,7 +21,7 @@ form{
     background-color:rgb(160, 179, 199);
     border-radius: 20px;
     padding-top: 30px;
-}
+} 
 .btn{
     background-color: rgb(230, 225, 210);
     color: rgb(34, 34, 33);
@@ -38,7 +38,7 @@ form{
 }
 .btn:hover {
     background-color: rgb(181, 157, 151);
-  }
+  } 
 
   input{
     background-color:  rgb(238, 233, 222);;
